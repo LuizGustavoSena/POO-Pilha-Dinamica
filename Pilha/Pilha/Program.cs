@@ -16,19 +16,9 @@ namespace Pilha
 
             do
             {
-                try
-                {
-                    Console.WriteLine("\n1 - Cadastrar Livro\n" + // MENU
-                    "2 - Imprimir Livros\n3 - Deletar ultimo Livro\n" +
-                    "4 - Quantidade de Livros\n5 - Buscar Livro\n0 - Sair");
-                    op = int.Parse(Console.ReadLine());
-                }
-                catch (Exception)
-                {
-                    op = 6; // LAÇO RODA NOVAMENTE
-                }
+                op = menu(); // MENU
 
-                Console.Clear();
+                Console.Clear(); // LIMPA TELA
 
                 switch (op)
                 {
@@ -65,6 +55,22 @@ namespace Pilha
             Console.ReadKey();
         }
 
+        static int menu()
+        {
+            try
+            {
+                int op;
+                Console.WriteLine("\n1 - Cadastrar Livro\n" + // MENU
+                "2 - Imprimir Livros\n3 - Deletar ultimo Livro\n" +
+                "4 - Quantidade de Livros\n5 - Buscar Livro\n0 - Sair");
+                op = int.Parse(Console.ReadLine());
+                return op;
+            }
+            catch (Exception)
+            {
+                return menu(); // LAÇO RODA NOVAMENTE
+            }
+        }
         static public Livro lerLivro()
         {
             try
