@@ -11,7 +11,7 @@ namespace Pilha
         public Livro Topo { get; set; }
 
         // MÉTODOS
-        public void push(Livro aux)
+        public void push(Livro aux) // INSERCAO
         {
             aux.Anterior = Topo;
             Topo = aux;
@@ -34,7 +34,7 @@ namespace Pilha
             }
         }
 
-        public void pop()
+        public void pop() // REMOCAO
         {
             if (Topo == null)
                 Console.WriteLine("Impossivel remover!");
@@ -44,7 +44,7 @@ namespace Pilha
             }
         }
 
-        public int qtd()
+        public int qtd() // QUANTIDADE DE LIVROS NA PILHA 
         {
             int contador = 0;
             if (Topo != null)
@@ -59,7 +59,7 @@ namespace Pilha
             return contador;
         }
 
-        public void buscar(string titulo)
+        public void buscar(string titulo) // BUSCA LIVRO POR TITULO
         {
             if (Topo == null)
                 Console.WriteLine("Pilha vazia!");
@@ -68,8 +68,8 @@ namespace Pilha
                 Livro aux = Topo;
                 bool encontra = false;
                 do
-                {
-                    if (aux.Titulo == titulo) { 
+                {    // ATRIBUI TODAS AS LETRAS MAIUSCULAS E REMOVE OS ESPAÇOS
+                    if (aux.Titulo.ToUpper().Trim(' ') == titulo.ToUpper().Trim(' ')) { 
                         Console.WriteLine("\nLIVRO ENCONTRADO\n" + aux.ToString());
                         encontra = true;
                         break;

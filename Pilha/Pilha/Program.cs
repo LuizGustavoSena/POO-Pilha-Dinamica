@@ -10,9 +10,9 @@ namespace Pilha
     {
         static void Main(string[] args)
         {
-            int op; //  variavel opções
-            Livro livro; // INICIALIZAÇÃO LIVRO
-            PilhaLivro pilha = new PilhaLivro { Topo = null }; // INICIALIZAÇÃO E INSTANCIAMENTO DA PILHA
+            int op; //  VARIAVEL PARA OPCOESS
+            Livro livro; // INICIALIZACAO LIVRO
+            PilhaLivro pilha = new PilhaLivro { Topo = null }; // INICIALIZACAO E INSTANCIAMENTO DA PILHA
 
             do
             {
@@ -41,7 +41,7 @@ namespace Pilha
                         break;
                     case 4: // QUANTIDADE
 
-                        Console.WriteLine("Quantidade de Livros: " + pilha.qtd()); // IMPRIME QUANTIDADE DE LIVROS
+                        Console.WriteLine("Quantidade de Livros: " + pilha.qtd()); // IMPRIME QUANTIDADE DE LIVROS NA PILHA
 
                         break;
                     case 5: //BUSCAR
@@ -59,8 +59,8 @@ namespace Pilha
         {
             try
             {
-                int op;
-                Console.WriteLine("\n1 - Cadastrar Livro\n" + // MENU
+                int op; // MENU
+                Console.WriteLine("\n1 - Cadastrar Livro\n" +
                 "2 - Imprimir Livros\n3 - Deletar ultimo Livro\n" +
                 "4 - Quantidade de Livros\n5 - Buscar Livro\n0 - Sair");
                 op = int.Parse(Console.ReadLine());
